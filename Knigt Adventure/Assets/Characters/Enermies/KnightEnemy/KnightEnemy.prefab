@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201364892165994287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,28 +58,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.3182192, y: 0.89958966}
-      - {x: 2.9163003, y: 1.2522751}
-      - {x: 2.4175134, y: 1.4436975}
-      - {x: 1.7998147, y: 1.4819492}
-      - {x: 1.1622334, y: 1.4727156}
-      - {x: 0.4360187, y: 1.333266}
-      - {x: -0.25715446, y: 1.0138922}
-      - {x: 0.39964437, y: 1.0408702}
-      - {x: 0.6630535, y: 1.0946779}
-      - {x: 1.2127645, y: 1.0709474}
-      - {x: 1.6041656, y: 0.76855826}
-      - {x: 1.9349713, y: 0.520928}
-      - {x: 2.0856185, y: 0.16986263}
-      - {x: 2.170195, y: -0.09356928}
-      - {x: 2.0092494, y: -0.31991553}
-      - {x: 1.7533281, y: -0.53656006}
-      - {x: 3.4839034, y: -1.0612922}
-      - {x: 3.638697, y: -0.74796236}
-      - {x: 3.7349796, y: -0.2432133}
-      - {x: 3.6702967, y: 0.14813143}
-      - {x: 3.6266491, y: 0.39057034}
-      - {x: 3.4738078, y: 0.59156525}
+    - - {x: 0.35215437, y: 0.9916399}
+      - {x: 0.07296932, y: 1.2011359}
+      - {x: -0.10875535, y: 1.3005081}
+      - {x: -0.42984772, y: 1.4205824}
+      - {x: -1.0572011, y: 1.45226}
+      - {x: -2.09025, y: 1.4355441}
+      - {x: -3.2232194, y: 0.9729809}
+      - {x: -2.47437, y: 1.0204146}
+      - {x: -2.2007337, y: 1.1253614}
+      - {x: -1.7737558, y: 1.0300362}
+      - {x: -1.6073663, y: 0.9526589}
+      - {x: -1.3992944, y: 0.79707885}
+      - {x: -1.1259136, y: 0.6096584}
+      - {x: -0.8265531, y: 0.27463192}
+      - {x: -0.7420311, y: -0.08467579}
+      - {x: -1.192281, y: -0.5570158}
+      - {x: 0.51783895, y: -1.0612922}
+      - {x: 0.74422693, y: -0.70705116}
+      - {x: 0.83028173, y: -0.19207418}
+      - {x: 0.765599, y: 0.25040954}
+      - {x: 0.6299012, y: 0.5542153}
+      - {x: 0.48728752, y: 0.7961215}
 --- !u!114 &43779233531777723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +93,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 0, y: 0}
+  knockback: {x: 5, y: 2}
+--- !u!1 &1980708572525221670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4393476859160564168}
+  - component: {fileID: 1232655252596557334}
+  - component: {fileID: 9029745492994067769}
+  m_Layer: 11
+  m_Name: CliffDetectionZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4393476859160564168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980708572525221670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4071404806166982361}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1232655252596557334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980708572525221670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5eb5632487ebc042b75dacdf10653be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7274982445366619026}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: OnCliffDetected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dectectedColliders: []
+--- !u!61 &9029745492994067769
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980708572525221670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &4071404806166982363
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +218,7 @@ Transform:
   m_Children:
   - {fileID: 2805960450779978362}
   - {fileID: 5275394145893571754}
+  - {fileID: 4393476859160564168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,6 +326,7 @@ MonoBehaviour:
   walkSpeed: 3
   walkStopRate: 0.05
   attackZone: {fileID: 2628925227813032710}
+  cliffDetectionZone: {fileID: 1232655252596557334}
   _hasTarget: 0
 --- !u!114 &22104567163689240
 MonoBehaviour:
@@ -305,11 +394,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damgeableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7274982445366619026}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 100
   _health: 100
   _isAlive: 1
   isInvisible: 0
+  invisibilityTime: 0.25
 --- !u!1 &6476213826185313873
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +424,7 @@ GameObject:
   - component: {fileID: 2315252609311705562}
   - component: {fileID: 2628925227813032710}
   m_Layer: 10
-  m_Name: DetectionZone
+  m_Name: HitBoxDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,4 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eb5632487ebc042b75dacdf10653be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls: []
   dectectedColliders: []
