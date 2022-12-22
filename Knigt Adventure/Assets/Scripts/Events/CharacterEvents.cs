@@ -12,5 +12,5 @@ public class CharacterEvents
     public static UnityAction<GameObject, int> characterDamaged;
     
     // Character healed and amount healed
-    public static UnityAction<GameObject, int> characterHealthed;
+    public static UnityAction<GameObject, int> characterHealed;
 }
