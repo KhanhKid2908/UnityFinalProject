@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerControler : MonoBehaviour
@@ -13,6 +14,12 @@ public class PlayerControler : MonoBehaviour
     Vector2 moveInput;
     TouchingDirections touchingDirections;
     Damageable damageable;
+
+    IEnumerator GameOver() {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("GameOverScene");
+    }
 
     public float CurrentMoveSpeed { get
         {
@@ -121,6 +128,11 @@ public class PlayerControler : MonoBehaviour
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+        
+        if(!IsAlive)
+        {
+            StartCoroutine(GameOver());
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
