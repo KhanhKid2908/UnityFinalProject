@@ -15,7 +15,7 @@ public class HealthText : MonoBehaviour
     private Color startColor;
 
     private void Awake() 
-    {
+    {   
         textTransform = GetComponent<RectTransform>();
         textMeshPro = GetComponent<TextMeshProUGUI>();
         startColor = textMeshPro.color;

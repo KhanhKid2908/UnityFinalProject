@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] MusicManager musicManagerpref;
+    [SerializeField] SFXManager sfxManagerpref;
     [SerializeField] Button playbtn, settingbtn, backbtn;
     [SerializeField] Toggle soundTgl, musicTgl;
     [SerializeField] GameObject settingPanel, mainMenuPanel;
@@ -17,20 +19,41 @@ public class MainMenu : MonoBehaviour
         settingbtn.onClick.AddListener(OnClickSetting);
         backbtn.onClick.AddListener(OnClickBack);
         musicTgl.onValueChanged.AddListener(MusicToggle);
+        soundTgl.onValueChanged.AddListener(SoundToggle);
+        var musics = GameObject.FindGameObjectsWithTag("MusicManager");
+        var sfx = GameObject.FindGameObjectsWithTag("SFXManager");
+
+        if(sfx == null || sfx.Length == 0)
+        {
+            Instantiate(sfxManagerpref);
+        }
+
+        if(musics == null || musics.Length == 0)
+        {
+            Instantiate(musicManagerpref);
+        }
 
         mainMenuPanel.SetActive(true);
 
-        bool isMusic = PlayerPrefs.GetInt("Music") == 1? true : false;
+        // bool isMusic = PlayerPrefs.GetInt("Music") == 1? true : false;
 
         if(!Instance) //if (Instance == null)
         {
             Instance = this;
         }
     }
+    private void Start() 
+    {
+        if(MusicManager.Instance != null)
+            musicTgl.SetIsOnWithoutNotify(MusicManager.Instance.getMusicTgl());
+        if(SFXManager.Instance != null)
+            soundTgl.SetIsOnWithoutNotify(SFXManager.Instance.getsfxTgl());
+    }
 
     public void OnClickPlay()
     {
         SceneManager.LoadScene("GameplayScene");
+        MusicManager.Instance.PlayMusic("Scene1");
     }
 
     public void OnClickSetting()
@@ -47,13 +70,10 @@ public class MainMenu : MonoBehaviour
 
     public void MusicToggle(bool isOn)
     {
-        if (isOn)
-        {
-            Debug.Log("On");
-            AudioListener.volume = 1;
-        } else {
-            Debug.Log("Off");
-            AudioListener.volume = 0;
-        }
+        MusicManager.Instance.MusicChanged(isOn);
+    }
+    public void SoundToggle(bool isOn)
+    {
+        SFXManager.Instance.sfxChanged(isOn);
     }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - door
+  - MusicManager
+  - SFXManager
   layers:
   - Default
   - TransparentFX

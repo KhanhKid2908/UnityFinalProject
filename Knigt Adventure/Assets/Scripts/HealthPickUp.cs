@@ -9,6 +9,12 @@ public class HealthPickUp : MonoBehaviour
 
     AudioSource pickupSource;
 
+    IEnumerator PlayHealSFX() {
+        yield return new WaitForSeconds(0);
+
+        SFXManager.Instance.Playsfx("Heal");
+    }
+
     private void Awake() 
     {
         pickupSource = GetComponent<AudioSource>();
@@ -30,7 +36,7 @@ public class HealthPickUp : MonoBehaviour
             if(wasHealed)
             {
                 if(pickupSource)
-                    AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position, pickupSource.volume);
+                    StartCoroutine(PlayHealSFX());
 
                 Destroy(gameObject);
             }   

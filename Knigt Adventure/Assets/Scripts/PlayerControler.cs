@@ -21,6 +21,14 @@ public class PlayerControler : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+    IEnumerator PlayHitSFX() {
+        yield return new WaitForSeconds(0);
+
+        SFXManager.Instance.Playsfx("Hit");
+    }
+
+    
+
     public float CurrentMoveSpeed { get
         {
             if(CanMove)
@@ -190,6 +198,7 @@ public class PlayerControler : MonoBehaviour
     {
         if(context.started)
         {
+            SFXManager.Instance.Playsfx("PlayerSword");
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }
     }
@@ -204,6 +213,16 @@ public class PlayerControler : MonoBehaviour
 
     public void OnHit(int damage, Vector2 knockback)
     {
+        StartCoroutine(PlayHitSFX());
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if(collision.gameObject.tag.Equals("door"))
+        {
+            SceneManager.LoadScene("GameplayScene2");
+        }
+                
     }
 }

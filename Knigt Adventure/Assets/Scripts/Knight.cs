@@ -51,6 +51,7 @@ public class Knight : MonoBehaviour
         get { return _hasTarget; } 
         private set
         {
+
             _hasTarget = value;
             animator.SetBool(AnimationStrings.hasTarget, value);
         } 
@@ -129,6 +130,7 @@ public class Knight : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        StartCoroutine(PlaySound());
     }
 
     public void OnCliffDetected()
@@ -137,5 +139,11 @@ public class Knight : MonoBehaviour
         {
             FlipDirection();
         }
+    }
+
+    IEnumerator PlaySound() {
+        yield return new WaitForSeconds(0);
+
+        SFXManager.Instance.Playsfx("Hit");
     }
 }

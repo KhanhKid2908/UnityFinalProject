@@ -8,8 +8,15 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, Vector2> damgeableHit;
     public UnityEvent damgeableDeath;
     public UnityEvent<int, int> healthChanged;
+    int count = 0;
 
     Animator animator;
+
+    IEnumerator PlayDeadSFX() {
+        yield return new WaitForSeconds(0);
+
+        SFXManager.Instance.Playsfx("Dead");
+    }
 
     public int _maxHealth = 100;
 
@@ -87,6 +94,7 @@ public class Damageable : MonoBehaviour
     private void Awake() 
     {
         animator = GetComponent<Animator>();
+        
     }
 
     private void Update() 
@@ -102,6 +110,14 @@ public class Damageable : MonoBehaviour
 
             timeSinceHit += Time.deltaTime;
         }
+
+        if(!IsAlive)
+        {
+            count++;
+            if(count == 1)
+                StartCoroutine(PlayDeadSFX());
+        }
+
     }
 
     // Returns whter the damgeable took damge or not

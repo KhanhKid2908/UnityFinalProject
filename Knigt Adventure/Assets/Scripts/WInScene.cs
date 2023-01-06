@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverScene : MonoBehaviour
+public class WInScene : MonoBehaviour
 {
     [SerializeField] Button replaybtn, mainMenubtn;
-    public static GameOverScene Instance;
+    public static WInScene Instance;
 
     private void Awake() 
     {
+        MusicManager.Instance.PlayMusic("Victory");
         replaybtn.onClick.AddListener(OnClickReplay);
         mainMenubtn.onClick.AddListener(OnClickMainMenu);
 

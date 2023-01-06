@@ -304,7 +304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 0.0000066757}
+  m_AnchoredPosition: {x: 0.000015259, y: -46}
   m_SizeDelta: {x: 273.1876, y: 53.4181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277601344
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 993630367}
   - component: {fileID: 993630366}
   - component: {fileID: 993630365}
-  - component: {fileID: 993630369}
+  - component: {fileID: 993630370}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -495,7 +495,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &993630369
+--- !u!114 &993630370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 993630364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf2afba8be936340bf5bdd1e676dd35, type: 3}
+  m_Script: {fileID: 11500000, guid: cf3bfc531fc9cf14fb2d8af06ab00ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   replaybtn: {fileID: 277601344}
@@ -567,7 +567,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: Congratulation My Knight! You has earned the final treasure. Enjoy...While
+    you can...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb1fdd67d1fbdcb47bf69f7694ebaa0c, type: 2}
   m_sharedMaterial: {fileID: -4367612961704229260, guid: bb1fdd67d1fbdcb47bf69f7694ebaa0c, type: 2}
@@ -594,8 +595,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 108
-  m_fontSizeBase: 108
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1027,7 +1028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -83}
+  m_AnchoredPosition: {x: 0.000015259, y: -129}
   m_SizeDelta: {x: 273.1876, y: 53.4181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862656867
