@@ -222,7 +222,6 @@ public class PlayerControler : MonoBehaviour
         if(collision.gameObject.tag.Equals("door"))
         {
             SceneManager.LoadScene("GameplayScene2");
-        }
-                
+        }      
     }
 }
